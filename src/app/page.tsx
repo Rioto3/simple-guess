@@ -181,7 +181,7 @@ export default function Page() {
         title="正解を表示"
       />
       
-      <h3 style={{ margin: "0.5rem", fontSize: "1.5rem" }}>🎲 simple-guess</h3>
+      <h3 style={{ margin: "0.5rem", fontSize: "1.5rem" }}>🎲 simpleなguess</h3>
       <p style={{ margin: "0.5rem", fontSize: "1rem" }}>{status}</p>
       
       {role && (
