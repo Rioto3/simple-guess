@@ -1,11 +1,16 @@
 import type { NextConfig } from "next";
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+import withPWA from "@ducanh2912/next-pwa";
+
+initOpenNextCloudflareForDev();
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
 };
 
-export default nextConfig;
-
-// added by create cloudflare to enable calling `getCloudflareContext()` in `next dev`
-import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare';
-initOpenNextCloudflareForDev();
+export default withPWA({
+  ...nextConfig,
+  dest: "public",
+  disable: process.env.NODE_ENV === "development",
+  register: true,
+});
