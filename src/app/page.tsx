@@ -29,6 +29,7 @@ export default function Page() {
 
   useEffect(() => {
     const socket = new WebSocket("wss://simple-guess-p2p-server.riotamoriya.workers.dev/ws");
+    // const socket = new WebSocket("wss://simple-guess-p2p-server.tubeclip.win/ws");
     setWs(socket);
 
     socket.onopen = () => setStatus("🛰 接続成功。相手を待っています...");
